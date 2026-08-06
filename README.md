@@ -13,3 +13,4 @@ Minh's personal skill collection, bundled into one plugin.
 | `real-personal-branding` | Personal branding help (positioning, content, channels) focused on real-world outcomes, not vanity metrics. |
 | `writing-practice` | Coaches deliberate writing practice — the agent never writes the user's actual piece for them. |
 | `sound-human` | Makes prose read like a real person wrote it. Its main job is a default self-check the agent runs on its *own* generated prose (emails, posts, reports) before delivering it, not just an on-request edit of a pasted draft. |
+| `socratic-brainstorm` | Opt-in: probes a design or strategy idea with follow-up questions before giving direct feedback, instead of answering right away. Only triggers when explicitly invoked by name. |
