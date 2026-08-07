@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "minh-skills",
   "description": "Minh Duong's personal Claude Code marketplace — skills he built and uses himself.",
   "owner": {
@@ -9,9 +8,9 @@
   "plugins": [
     {
       "name": "minh-toolkit",
-      "source": "./",
+      "source": "./plugins/minh-toolkit",
       "description": "Minh's personal skill collection: learning mentorship (Learning Toolkit), YouTube video evaluation, personal branding, writing practice, a human-voice writing check, and Socratic decision-probing.",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "author": {
         "name": "Minh Duong",
         "email": "johncegom203@gmail.com"
