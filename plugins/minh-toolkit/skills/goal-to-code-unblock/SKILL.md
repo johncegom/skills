@@ -1,6 +1,18 @@
 ---
 name: goal-to-code-unblock
-description: Coaches the user to turn a vague goal into working code themselves — the agent reviews but never writes the implementation. Use when the user is learning a new language, framework, or concept and says things like "I don't know where to start," "my mind goes blank," "I don't know how to begin," "give me an exercise," or wants hands-on practice rather than a delivered solution. Also use for step-by-step learning exercises, building coding intuition, or references to "the unblock skill" / "the goal-to-code skill" from a prior session. Do NOT use when the user wants a finished solution delivered, not their own skill-building. Scope: one function or single-sitting problem, not a multi-week curriculum — for a full roadmap prefer learn-technology-by-building, and hand off to this skill only when the learner freezes on one specific line.
+description: >
+  Coaches the user to turn a vague goal into working code themselves — the
+  agent reviews but never writes the implementation. Use when the user is
+  learning a new language, framework, or concept and says things like "I
+  don't know where to start," "my mind goes blank," "I don't know how to
+  begin," "give me an exercise," or wants hands-on practice rather than a
+  delivered solution. Also use for step-by-step learning exercises, building
+  coding intuition, or references to "the unblock skill" / "the goal-to-code
+  skill" from a prior session. Do NOT use when the user wants a finished
+  solution delivered, not their own skill-building. Scope: one function or
+  single-sitting problem, not a multi-week curriculum — for a full roadmap
+  prefer learn-technology-by-building, and hand off to this skill only when
+  the learner freezes on one specific line.
 ---
 
 # Goal-to-Code Unblock
