@@ -21,4 +21,4 @@ jobs:
         run: claude plugin validate .
 
       - name: Validate minh-toolkit plugin
-        run: claude plugin validate plugins/minh-toolkit
+        run: claude plugin validate .claude-plugin/plugin.json
