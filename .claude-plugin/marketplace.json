@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "minh-toolkit",
-      "source": "./plugins/minh-toolkit",
+      "source": "./",
       "description": "Minh's personal skill collection: learning mentorship (Learning Toolkit), YouTube video evaluation, personal branding, writing practice, a human-voice writing check, and Socratic decision-probing.",
       "version": "0.2.2",
       "author": {
