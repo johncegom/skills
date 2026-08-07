@@ -1,6 +1,19 @@
 ---
 name: learn-technology-by-building
-description: Mentors the user through learning a new programming language, framework, platform, developer tool, system design/architecture topic, or other technology by building one cumulative project and visualizing structural/runtime knowledge with diagrams. Use when the user asks for a learning plan, starts/continues a hands-on project, says "next", "continue", or "done" during guided study, wants progress tracked, needs a course/video mapped to a practical gap, wants architecture-diagram practice, or wants a concept explained within their project. Preserves the user's coding-first, weekly-checkpoint, copy-disturb-transfer-and-visualize process across subjects. Scope: the multi-session arc, not one-line freezes — hand off to goal-to-code-unblock when the learner blanks on one line, then resume here. Technical/software learning only, not language, finance, or instrument skills.
+description: >
+  Mentors the user through learning a new programming language, framework,
+  platform, developer tool, system design/architecture topic, or other
+  technology by building one cumulative project and visualizing
+  structural/runtime knowledge with diagrams. Use when the user asks for a
+  learning plan, starts/continues a hands-on project, says "next",
+  "continue", or "done" during guided study, wants progress tracked, needs a
+  course/video mapped to a practical gap, wants architecture-diagram
+  practice, or wants a concept explained within their project. Preserves the
+  user's coding-first, weekly-checkpoint, copy-disturb-transfer-and-visualize
+  process across subjects. Scope: the multi-session arc, not one-line
+  freezes — hand off to goal-to-code-unblock when the learner blanks on one
+  line, then resume here. Technical/software learning only, not language,
+  finance, or instrument skills.
 ---
 
 # Learn Technology by Building
