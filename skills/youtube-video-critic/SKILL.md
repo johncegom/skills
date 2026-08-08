@@ -37,13 +37,14 @@ This skill requires youtube-mcp tools (`get_metadata` / `get_video_metadata`, `g
 
 ## Step 2: Analyze with a critical-thinking lens
 
-Work through all five angles below. Do not skip any of them, even if the answer seems obvious — the point of this skill is to make the reasoning explicit and checkable, not just to give a gut reaction.
+Work through all six angles below. Do not skip any of them, even if the answer seems obvious — the point of this skill is to make the reasoning explicit and checkable, not just to give a gut reaction.
 
 1. **Substance vs. filler ratio.** Read the transcript and separate genuine informational content (explanations, data, demonstrations, arguments) from filler (self-promotion, sponsor reads, storytelling that doesn't carry information, repeated points, jokes, calls to subscribe). Estimate the split as a rough percentage (e.g. "roughly 60% substance, 40% filler/promotion"). Say what the filler actually consists of, don't just give a number.
 2. **Source and bias.** Who made this and what do they gain from the viewer having a positive impression — selling a product, a course, a tool they built, ad revenue, reputation? This doesn't automatically make the video worthless, but it changes how much weight to give enthusiastic claims. Distinguish measured claims (data, reproducible steps) from anecdotal ones ("people love this", one user's story).
 3. **Novelty.** Is the core information something genuinely new, or is it a repackaging of concepts that are already common knowledge or easily found elsewhere? Be specific about what (if anything) is actually novel — and name **what dimension** the novelty is in, since "new" can mean different things: a new idea/finding, a new way of presenting or packaging an existing idea, a new application or angle on something established, new data/evidence for a known claim, or a novel combination of existing ideas. Don't collapse these into a single verdict — a video can be low-novelty on the core idea but genuinely novel in framing or application, and that distinction is worth stating plainly rather than averaging away. The baseline for comparison stays as-is: common knowledge or easily found elsewhere — the reader can judge for themselves whether something is new *to them* even if it isn't new in an absolute sense.
 4. **Actionability.** Can the viewer do something concrete with this after watching — a step, a tool, a decision — or is it purely inspirational/entertainment with no follow-up action?
 5. **Personal relevance.** If you have context about the user (their current projects, tools, or interests, from this conversation or from memory), check whether the video's content connects to something they are actually doing. Explicitly include stated goals and aspirations here, not just active projects — a "side interest I want to develop" or "something I'm trying to learn" is just as valid a relevance anchor as an ongoing project, even if it hasn't started yet. If the user has stated a goal earlier in the conversation (e.g. "I want to build X as a side thing"), that goal should shape this row even for videos evaluated before that goal was mentioned — re-check personal relevance against the fullest context available, not just the context available when the video was first evaluated. Only use context that is genuinely relevant — don't force a connection that isn't there. If you have no such context, skip this row rather than inventing relevance.
+6. **True title vs. stated title.** After finishing the analysis above, write a short, title-length sentence that captures what the video's content actually delivers — grounded in what you found in the transcript, not a guess at the creator's intent (their actual intent isn't verifiable and isn't the point). Place it next to the video's real title. This is a minor, secondary note, not the main point of the review — its only job is to give the user a quick, useful signal about the gap (if any) between framing and substance. If the two are already a close match, say so in one line and move on; don't manufacture a gap that isn't there just to fill this row. When a real gap exists, name the specific *kind* of gap (e.g. singular framing for plural content, universal scope for a narrow context, certainty for a disputed claim) rather than a vague "a bit clickbait-y."
 
 ## Step 3: Deliver the verdict
 
@@ -56,6 +57,8 @@ Output a detailed table with one row per angle from Step 2, then a final verdict
 | Tính mới | ... |
 | Tính hành động | ... |
 | Độ liên quan cá nhân | ... |
+
+After the table, add one short standalone line comparing the stated title with the true-title sentence from Step 2.6 — this stays separate from the table since it's a secondary insight, not one of the five core evaluation angles.
 
 Then close with one of three verdicts, stated plainly and justified in 2-4 sentences:
 
