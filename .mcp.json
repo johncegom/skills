@@ -1,8 +1,11 @@
 {
   "mcpServers": {
     "youtube-mcp": {
-      "command": "npx",
-      "args": ["-y", "@umbertotancorre/youtube-mcp"]
+      "command": "go",
+      "args": ["run", "github.com/johncegom/go-youtube-mcp-cli/cmd/youtube-mcp@latest"],
+      "env": {
+        "GOPRIVATE": "github.com/johncegom/go-youtube-mcp-cli"
+      }
     }
   }
 }
