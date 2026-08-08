@@ -1,11 +1,7 @@
 {
   "mcpServers": {
     "youtube-mcp": {
-      "command": "go",
-      "args": ["run", "github.com/johncegom/go-youtube-mcp-cli/cmd/youtube-mcp@latest"],
-      "env": {
-        "GOPRIVATE": "github.com/johncegom/go-youtube-mcp-cli"
-      }
+      "command": "C:/Users/Admin/go/bin/youtube-mcp.exe"
     }
   }
 }
