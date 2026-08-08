@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "youtube-mcp": {
-      "command": "C:/Users/Admin/go/bin/youtube-mcp.exe"
+      "command": "${YOUTUBE_MCP_BIN:-youtube-mcp}"
     }
   }
 }
