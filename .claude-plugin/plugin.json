@@ -1,8 +1,18 @@
 {
   "name": "minh-toolkit",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Minh's personal skill collection: learning mentorship (Learning Toolkit), YouTube video evaluation, personal branding, writing practice, a human-voice writing check, and Socratic decision-probing.",
   "author": {
     "name": "Minh"
-  }
+  },
+  "skills": [
+    "./skills/goal-to-code-unblock",
+    "./skills/learn-technology-by-building",
+    "./skills/low-power-learning",
+    "./skills/real-personal-branding",
+    "./skills/socratic-brainstorm",
+    "./skills/sound-human",
+    "./skills/writing-practice",
+    "./skills/youtube-video-critic"
+  ]
 }
