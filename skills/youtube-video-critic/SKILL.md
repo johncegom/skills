@@ -1,6 +1,6 @@
 ---
 name: youtube-video-critic
-description: Evaluate a YouTube video with critical thinking to decide if it is worth the viewer's time. Use whenever the user shares a youtube.com or youtu.be link and asks things like "is this worth watching", "should I watch this", "đánh giá video này", "video này có đáng xem không", "review video giúp tôi", or asks for a critical/objective opinion on a YouTube video. Also trigger when the user asks to judge, rate, or assess the value of a YouTube video, even without using the word "evaluate". Requires the youtube-mcp-cli tools (https://github.com/johncegom/youtube-mcp-cli) for metadata and transcript access — check for these tools before starting.
+description: Evaluate a YouTube video with critical thinking to decide if it is worth the viewer's time. Use whenever the user shares a youtube.com or youtu.be link and asks things like "is this worth watching", "should I watch this", "đánh giá video này", "video này có đáng xem không", "review video giúp tôi", or asks for a critical/objective opinion on a YouTube video. Also trigger when the user asks to judge, rate, or assess the value of a YouTube video, even without using the word "evaluate". Requires the youtube-mcp-cli tools (https://github.com/johncegom/go-youtube-mcp-cli) for metadata and transcript access — check for these tools before starting.
 ---
 
 # YouTube Video Critic
@@ -26,7 +26,7 @@ This persona means:
 This skill requires youtube-mcp tools (`get_metadata` / `get_video_metadata`, `get_transcript`, optionally `get_transcript_timestamps`).
 
 1. Call `tool_search` with a query like "youtube transcript metadata" to check if these tools load.
-2. If no youtube-related tools are found, **stop and tell the user directly**: this skill needs the youtube-mcp-cli connector (https://github.com/johncegom/youtube-mcp-cli) and it does not appear to be available. Do not fall back to guessing about the video from the title alone — an evaluation without a transcript is not a real evaluation, it is a guess.
+2. If no youtube-related tools are found, **stop and tell the user directly**: this skill needs the youtube-mcp-cli connector (https://github.com/johncegom/go-youtube-mcp-cli) and it does not appear to be available. Do not fall back to guessing about the video from the title alone — an evaluation without a transcript is not a real evaluation, it is a guess. The connector's `.mcp.json` entry resolves the binary via `${YOUTUBE_MCP_BIN:-youtube-mcp}` — if it's missing, the fix is either putting the Go bin dir (`go env GOPATH`\bin, e.g. via `go install`) on `PATH`, or setting `YOUTUBE_MCP_BIN` to the binary's full path, then fully quitting and reopening Claude Desktop (closing the window alone isn't enough).
 3. If the tools load, proceed.
 
 ## Step 1: Gather the raw material
