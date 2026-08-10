@@ -10,7 +10,7 @@
       "name": "minh-toolkit",
       "source": "./",
       "description": "Minh's personal skill collection — 8 skills: goal-to-code-unblock (coaches writing code from a vague goal, never authors it), learn-technology-by-building (multi-session mentor for learning a technology through one cumulative project), low-power-learning (short passive session for a tired/burned-out brain), real-personal-branding (branding for real outcomes, not vanity metrics), socratic-brainstorm (opt-in, probes an idea with questions before giving direct feedback), sound-human (makes AI-written prose read like a person wrote it), writing-practice (coaches deliberate writing practice, never writes the piece for you), and youtube-video-critic (evaluates whether a video is worth watching; requires the go-youtube-mcp-cli connector on PATH or YOUTUBE_MCP_BIN set — see .mcp.json).",
-      "version": "0.2.8",
+      "version": "0.2.6",
       "author": {
         "name": "Minh Duong",
         "email": "johncegom203@gmail.com"

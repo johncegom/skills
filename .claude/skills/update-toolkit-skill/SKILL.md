@@ -40,8 +40,8 @@ description: >
 ```
 Every skill in this repo already uses this style — match it.
 
-### 3. Bump the version if the change is meaningful
-For anything beyond a typo fix, bump `.claude-plugin/plugin.json`'s `"version"` (semver) and keep `.claude-plugin/marketplace.json`'s matching `plugins[].version` field in sync with it. This is what lets `Sync automatically` in Desktop and `claude plugin update` detect there's something new.
+### 3. Do NOT bump the version yet
+Leave `.claude-plugin/plugin.json`'s `"version"` and `.claude-plugin/marketplace.json`'s matching `plugins[].version` field at whatever `main` currently has, even if this change is meaningful. **Only bump the version once the PR is actually merged** — a version number sitting in an open, unmerged PR is a lie about what's really shipped on `main`, and if the PR sits open for edits/iterations (as PR #17 did), each round would otherwise need another bump-and-revert. Bump as a small follow-up commit (or PR) right after merging, immediately before tagging a release if you're cutting one — see step 7.
 
 ### 4. Validate locally before pushing
 ```
@@ -67,8 +67,10 @@ If this change depends on another open, unmerged PR in this repo, base it on tha
 ### 6. Let CI run
 The `.github/workflows/validate-plugin.yml` workflow runs the same two `claude plugin validate` commands automatically on the PR. Check it's green (`gh pr checks <number>`) before merging.
 
-### 7. Merge
+### 7. Merge, then bump the version
 As the sole CODEOWNER you cannot approve your own PR — GitHub disables that. Merge via the admin-bypass option ("Merge without waiting for requirements are met") once CI is green. Don't lower the branch-protection review requirement to work around this; that was already evaluated and rejected in favor of keeping outside contributors' PRs properly gated.
+
+Once merged, if the change was meaningful (anything beyond a typo fix): on a fresh branch from `main`, bump `.claude-plugin/plugin.json`'s `"version"` (semver) and `.claude-plugin/marketplace.json`'s matching `plugins[].version`, validate, and land that through the same PR flow (steps 1, 4–7). This is what lets `Sync automatically` in Desktop and `claude plugin update` detect there's something new. If you're about to cut a release (see `claude plugin tag`), the version bump can be the same PR as the last functional change in that release, merged immediately before tagging — but it still only happens at/after merge, never speculatively inside an open PR.
 
 **Watch for the stacked-PR merge-order trap** (bit us in PR #9/#10/#11): if PR B is stacked on PR A, merging A into `main` does not retroactively pull B's already-merged-into-A commits into `main` if B merges into A *after* A already merged into `main`. Merge stacked PRs in dependency order, base-first, and double check the change actually landed on `main` afterward (`git log origin/main --oneline`, or re-run `claude plugin validate` against `origin/main`).
 
