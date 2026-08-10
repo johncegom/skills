@@ -77,13 +77,14 @@ When the personal relevance row is genuinely strong (a real stated goal or activ
 After the verdict, always add two more sections — this is what turns an evaluation into something usable, instead of just a judgment call.
 
 1. **Giá trị cốt lõi (core takeaways).** List the actual substantive points from the video, in your own words, as a short numbered list (3-6 items). Each point should be a real claim or idea from the video, not a vague restatement of the title. Skip filler entirely here — this list should only contain what survived the substance-vs-filler filter in Step 2.
-2. **Áp dụng cho bạn (personal application).** For each takeaway where you have genuine context about the user's own projects, tools, or work (from this conversation or from memory), state concretely how it applies — a specific action, question to ask themselves, or thing to change in what they're already building. Do not force this for every takeaway; if a point has no real connection to the user's context, leave it out of this section rather than padding it with a generic connection.
+2. **Áp dụng cho bạn (personal application).** For each takeaway where you have genuine context about the user's own projects, tools, or work (from this conversation or from memory), state concretely how it applies — a specific action, question to ask themselves, or thing to change in what they're already building. Do not force this for every takeaway; if a point has no real connection to the user's context, leave it out of this section rather than padding it with a generic connection. If *no* takeaway has genuine context to apply — no personal-relevance information at all — omit this section's heading entirely rather than printing it empty; an empty heading with no content under it reads as broken output.
 
 Only produce these two sections when the user's request is an evaluation of a specific video (not when they ask a narrower follow-up question about something already discussed) — but by default, always include them as part of a full evaluation output, not just on request.
 
 ## Language and tone
 
 - Respond in the same language the user used to ask (if they wrote in Vietnamese, answer in Vietnamese).
+- The structural labels in Step 3/4 (table headers, row labels, the three verdict names, "Điểm giá trị", "Giá trị cốt lõi", "Áp dụng cho bạn") are a fixed rubric vocabulary — keep them in Vietnamese exactly as written **regardless of the user's language**. Only the prose *inside* the table cells, the verdict justification, the takeaways, and the personal-application text switch to the user's language. This is deliberate, not an oversight: it keeps every evaluation this skill produces recognizable as the same rubric, the same way a scorecard's field names don't change per respondent.
 - Use plain, direct wording. Short sentences. No hype language, no jargon left unexplained.
 - Never just praise or just dismiss — the goal is an honest, specific judgment, not a verdict designed to please the user.
 
