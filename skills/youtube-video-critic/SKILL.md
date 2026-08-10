@@ -83,8 +83,7 @@ Only produce these two sections when the user's request is an evaluation of a sp
 
 ## Language and tone
 
-- Respond in the same language the user used to ask (if they wrote in Vietnamese, answer in Vietnamese).
-- The structural labels in Step 3/4 (table headers, row labels, the three verdict names, "Value score", "Core takeaways", "Personal application") are a fixed rubric vocabulary — keep them in English exactly as written **regardless of the user's language**. Only the prose *inside* the table cells, the verdict justification, the takeaways, and the personal-application text switch to the user's language. This is deliberate, not an oversight: it keeps every evaluation this skill produces recognizable as the same rubric, the same way a scorecard's field names don't change per respondent.
+- Respond in the same language the user used to ask (if they wrote in Vietnamese, answer in Vietnamese) — this includes the structural labels in Step 3/4 (table headers, row labels, the three verdict names, "Value score", "Core takeaways", "Personal application"), not just the surrounding prose. This file's instructions are written in English for consistency across skills in this plugin, but that's a source-language choice, not a runtime constraint — nothing here stays fixed in English when the user is asking in another language.
 - Use plain, direct wording. Short sentences. No hype language, no jargon left unexplained.
 - Never just praise or just dismiss — the goal is an honest, specific judgment, not a verdict designed to please the user.
 
