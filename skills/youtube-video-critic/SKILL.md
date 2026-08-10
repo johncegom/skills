@@ -50,23 +50,23 @@ Work through all six angles below. Do not skip any of them, even if the answer s
 
 Output a detailed table with one row per angle from Step 2, then a final verdict paragraph. Structure:
 
-| Tiêu chí | Đánh giá |
+| Criterion | Assessment |
 |---|---|
-| Nội dung thực chất vs. filler | ... |
-| Nguồn & động cơ | ... |
-| Tính mới | ... |
-| Tính hành động | ... |
-| Độ liên quan cá nhân | ... |
+| Substance vs. filler | ... |
+| Source & incentive | ... |
+| Novelty | ... |
+| Actionability | ... |
+| Personal relevance | ... |
 
 After the table, add one short standalone line comparing the stated title with the true-title sentence from Step 2.6 — this stays separate from the table since it's a secondary insight, not one of the five core evaluation angles.
 
 Then close with one of three verdicts, stated plainly and justified in 2-4 sentences:
 
-- **Đáng xem trọn video** — substance is high, filler is low, relative to the time cost.
-- **Xem lướt** — only specific parts are worth it; give the timestamp ranges to skip to (use the timed transcript for this).
-- **Bỏ qua, đọc tóm tắt là đủ** — the payoff doesn't justify the time; a short summary (which you should give) captures what's actually useful.
+- **Worth watching in full** — substance is high, filler is low, relative to the time cost.
+- **Skim it** — only specific parts are worth it; give the timestamp ranges to skip to (use the timed transcript for this).
+- **Skip it, the summary is enough** — the payoff doesn't justify the time; a short summary (which you should give) captures what's actually useful.
 
-Right after the verdict, add a value score: **Điểm giá trị: X/10** — a single number rating value-per-minute (not production quality, not entertainment — value actually gained relative to time spent). Follow it with one sentence naming the single biggest gap keeping it from a 10, stated concretely (e.g. "nếu cắt hết đoạn quảng cáo và giữ nguyên phần nội dung, đây sẽ là video 9/10" or "thiếu dữ liệu định lượng để chứng minh các tuyên bố, nếu không sẽ là 8/10"). Don't pad this with vague praise — if there's no real gap (a 9-10 video), say so plainly instead of inventing one.
+Right after the verdict, add a value score: **Value score: X/10** — a single number rating value-per-minute (not production quality, not entertainment — value actually gained relative to time spent). Follow it with one sentence naming the single biggest gap keeping it from a 10, stated concretely (e.g. "cut the ad segment and keep the rest as-is, and this would be a 9/10" or "missing quantitative data to back the claims, otherwise this would be an 8/10"). Don't pad this with vague praise — if there's no real gap (a 9-10 video), say so plainly instead of inventing one.
 
 Always weigh the verdict against the video's actual duration — a 5-minute video with 30% filler is a different judgment than a 40-minute video with 30% filler.
 
@@ -76,14 +76,14 @@ When the personal relevance row is genuinely strong (a real stated goal or activ
 
 After the verdict, always add two more sections — this is what turns an evaluation into something usable, instead of just a judgment call.
 
-1. **Giá trị cốt lõi (core takeaways).** List the actual substantive points from the video, in your own words, as a short numbered list (3-6 items). Each point should be a real claim or idea from the video, not a vague restatement of the title. Skip filler entirely here — this list should only contain what survived the substance-vs-filler filter in Step 2.
-2. **Áp dụng cho bạn (personal application).** For each takeaway where you have genuine context about the user's own projects, tools, or work (from this conversation or from memory), state concretely how it applies — a specific action, question to ask themselves, or thing to change in what they're already building. Do not force this for every takeaway; if a point has no real connection to the user's context, leave it out of this section rather than padding it with a generic connection.
+1. **Core takeaways.** List the actual substantive points from the video, in your own words, as a short numbered list (3-6 items). Each point should be a real claim or idea from the video, not a vague restatement of the title. Skip filler entirely here — this list should only contain what survived the substance-vs-filler filter in Step 2.
+2. **Personal application.** For each takeaway where you have genuine context about the user's own projects, tools, or work (from this conversation or from memory), state concretely how it applies — a specific action, question to ask themselves, or thing to change in what they're already building. Do not force this for every takeaway; if a point has no real connection to the user's context, leave it out of this section rather than padding it with a generic connection. If *no* takeaway has genuine context to apply — no personal-relevance information at all — omit this section's heading entirely rather than printing it empty; an empty heading with no content under it reads as broken output.
 
 Only produce these two sections when the user's request is an evaluation of a specific video (not when they ask a narrower follow-up question about something already discussed) — but by default, always include them as part of a full evaluation output, not just on request.
 
 ## Language and tone
 
-- Respond in the same language the user used to ask (if they wrote in Vietnamese, answer in Vietnamese).
+- Respond in the same language the user used to ask (if they wrote in Vietnamese, answer in Vietnamese) — this includes the structural labels in Step 3/4 (table headers, row labels, the three verdict names, "Value score", "Core takeaways", "Personal application"), not just the surrounding prose. This file's instructions are written in English for consistency across skills in this plugin, but that's a source-language choice, not a runtime constraint — nothing here stays fixed in English when the user is asking in another language.
 - Use plain, direct wording. Short sentences. No hype language, no jargon left unexplained.
 - Never just praise or just dismiss — the goal is an honest, specific judgment, not a verdict designed to please the user.
 
