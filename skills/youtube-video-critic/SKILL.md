@@ -48,6 +48,8 @@ Work through all six angles below. Do not skip any of them, even if the answer s
 
 ## Step 3: Deliver the verdict
 
+Work out the full analysis below first — the verdict genuinely depends on all five rows (duration weighting and personal relevance can shift it), so it has to be reasoned out last. Then, when assembling the final output, put a one-line TL;DR *first*, before the table: **TL;DR: <verdict> — Value score: X/10**, using the exact verdict name and score from later in this step. This is a bottom-line-up-front summary for someone skimming, not a substitute for the reasoning — the full table, gap line, verdict justification, and value-score gap sentence still follow it in full, unchanged. Reasoning order and display order are different things here: reason fully first, then put the conclusion on top.
+
 Output a detailed table with one row per angle from Step 2, then a final verdict paragraph. Structure:
 
 | Criterion | Assessment |
