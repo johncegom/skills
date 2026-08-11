@@ -1,6 +1,15 @@
 ---
 name: youtube-video-critic
-description: Evaluate a YouTube video with critical thinking to decide if it is worth the viewer's time. Use whenever the user shares a youtube.com or youtu.be link and asks things like "is this worth watching", "should I watch this", "đánh giá video này", "video này có đáng xem không", "review video giúp tôi", or asks for a critical/objective opinion on a YouTube video. Also trigger when the user asks to judge, rate, or assess the value of a YouTube video, even without using the word "evaluate". Requires the youtube-mcp-cli tools (https://github.com/johncegom/go-youtube-mcp-cli) for metadata and transcript access — check for these tools before starting.
+description: >
+  Evaluate a YouTube video with critical thinking to decide if it is worth the
+  viewer's time. Use whenever the user shares a youtube.com or youtu.be link and
+  asks things like "is this worth watching", "should I watch this", "đánh giá video
+  này", "video này có đáng xem không", "review video giúp tôi", or asks for a
+  critical/objective opinion on a YouTube video. Also trigger when the user asks to
+  judge, rate, or assess the value of a YouTube video, even without using the word
+  "evaluate". Requires the youtube-mcp-cli tools
+  (https://github.com/johncegom/go-youtube-mcp-cli) for metadata and transcript
+  access — check for these tools before starting.
 ---
 
 # YouTube Video Critic

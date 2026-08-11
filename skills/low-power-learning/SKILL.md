@@ -1,6 +1,16 @@
 ---
 name: low-power-learning
-description: Runs a short, near-passive learning session for a user whose brain is tired, overloaded, or unable to think, so the learning habit survives without demanding generation effort. Use when the user says things like "my brain is fried", "too tired to code", "can't think today", "I feel mindless", "brain is mush", "no energy but I don't want to skip learning", "give me something easy", or wants to keep a streak alive on a low-energy day. Also use, even without an explicit ask, when the user is mid-technology and reports fatigue, burnout, or overwhelm. Fully standalone; cooperates with learn-technology-by-building and goal-to-code-unblock if installed. Do NOT use when the user has normal energy and wants to practice or build — active learning or direct help fits better.
+description: >
+  Runs a short, near-passive learning session for a user whose brain is tired,
+  overloaded, or unable to think, so the learning habit survives without demanding
+  generation effort. Use when the user says things like "my brain is fried", "too
+  tired to code", "can't think today", "I feel mindless", "brain is mush", "no
+  energy but I don't want to skip learning", "give me something easy", or wants to
+  keep a streak alive on a low-energy day. Also use, even without an explicit ask,
+  when the user is mid-technology and reports fatigue, burnout, or overwhelm. Fully
+  standalone; cooperates with learn-technology-by-building and goal-to-code-unblock
+  if installed. Do NOT use when the user has normal energy and wants to practice or
+  build — active learning or direct help fits better.
 ---
 
 # Low-Power Learning

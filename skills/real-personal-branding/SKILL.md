@@ -1,6 +1,15 @@
 ---
 name: real-personal-branding
-description: Help build a personal brand — positioning, content strategy, writing posts, choosing channels, measuring progress — with the explicit goal of producing real-world outcomes (job opportunities, inbound leads, recognition that converts into something), not the illusion of a brand made of vanity metrics. Use whenever the user wants to build a personal brand, grow a professional presence, plan content strategy for LinkedIn/X/other platforms, write posts about their work or projects for that purpose, or asks to evaluate whether their branding effort is actually working. Also use when the user wants to turn a project or work experience into public content as part of building recognition.
+description: >
+  Help build a personal brand — positioning, content strategy, writing posts,
+  choosing channels, measuring progress — with the explicit goal of producing
+  real-world outcomes (job opportunities, inbound leads, recognition that converts
+  into something), not the illusion of a brand made of vanity metrics. Use whenever
+  the user wants to build a personal brand, grow a professional presence, plan
+  content strategy for LinkedIn/X/other platforms, write posts about their work or
+  projects for that purpose, or asks to evaluate whether their branding effort is
+  actually working. Also use when the user wants to turn a project or work
+  experience into public content as part of building recognition.
 ---
 
 # Real Personal Branding
