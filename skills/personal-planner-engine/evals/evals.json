@@ -1,0 +1,95 @@
+{
+  "skill_name": "personal-planner-engine",
+  "evals": [
+    {
+      "id": 0,
+      "name": "standalone-vague-goal",
+      "prompt": "I want to get back into shape and run a 10K by the end of the year. I can realistically train 3 days a week, maybe 30-45 min each. I haven't run consistently in like 2 years. Can you make me a plan?",
+      "expected_output": "Standalone Mode plan with a concrete near-term outcome, dependency-aware phasing (base building before speed/distance work), conservative capacity fit against 3x30-45min/week with protected contingency, a small first atomic action, bad-day minimum, rollback trigger, and a review cadence. Should not invent peak-energy times, a fixed daily schedule, or precise paces/distances not supplied by the user.",
+      "files": [],
+      "assertions": [
+        "Defines an observable outcome and evidence of completion, not just a wishlist of activities",
+        "Sequences work with base-building before speed/distance-focused work (dependency-aware, not arbitrary calendar order)",
+        "Protects contingency and does not schedule the full 3x30-45min/week as committed without buffer",
+        "Provides a single 15-30 minute first atomic action with an objective definition of done",
+        "Includes a bad-day minimum that is a small (2-5 min) action meaningfully connected to the goal, not a streak/app-opening action",
+        "Includes a concrete rollback trigger and a review/replan trigger",
+        "Does not invent a specific peak-energy clock window, exact pace/mileage numbers, or a fixed race date not supplied by the user"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "overcommitment-fake-precision-trap",
+      "prompt": "I only have about 4 hours a week outside of work. I want to build and launch a full SaaS product — auth, Stripe billing, a dashboard, and a marketing site — in 6 weeks. Can you give me a week-by-week schedule to hit that?",
+      "expected_output": "Should flag the capacity/scope mismatch rather than fabricating a week-by-week schedule that fits everything into 4h/week x 6 weeks. Should protect contingency, separate committed vs stretch vs deferred scope (e.g. cut marketing site or defer billing polish), and either extend the horizon or reduce scope while preserving the core outcome. Should not silently overbook or invent precise daily time blocks.",
+      "files": [],
+      "assertions": [
+        "Explicitly flags that the requested scope does not fit 4h/week x 6 weeks before proposing a schedule",
+        "Separates scope into committed vs stretch vs deferred rather than presenting all requested features as committed",
+        "Protects contingency rather than allocating all 4 hours/week to planned work",
+        "Resolves the overcommitment by cutting scope and/or extending the horizon rather than silently cramming everything in",
+        "Does not fabricate precise daily time blocks or a false sense of on-track precision",
+        "Preserves core technical dependency order (e.g. auth/foundation before polish) rather than reordering purely for calendar convenience"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "enhancer-mode-guitar-curriculum",
+      "prompt": "My guitar teacher gave me this 8-week curriculum: Week 1-2 basic chords + strumming patterns, Week 3-4 barre chords + simple songs, Week 5-6 fingerpicking, Week 7-8 play 3 full songs from memory for a recital. I have about 3-4 hours a week to practice, and honestly some weeks I might get zero time because of travel. Can you help me actually turn this into something executable?",
+      "expected_output": "Should enter Enhancer Mode: preserve the teacher's 8-week sequencing, phase content, and recital evidence goal rather than replacing it with a generic template. Should add capacity-fit against 3-4h/week with contingency, a bad-day minimum tied to the current phase (not a generic streak action), a rollback plan for zero-practice weeks, and a review trigger. Should not invent a peak-energy time or delete/reorder the teacher's curriculum.",
+      "files": [],
+      "assertions": [
+        "Preserves the teacher's 8-week phase sequence and recital evidence goal rather than replacing it with a generic template",
+        "Adds capacity-fit against 3-4h/week with protected contingency rather than assuming full capacity every week",
+        "Explicitly handles zero-practice weeks (rollback/catch-up plan) rather than ignoring the stated travel risk",
+        "Includes a bad-day/zero-time minimum tied to the current curriculum phase, not a generic streak action",
+        "Includes a review or replan trigger",
+        "Does not invent a specific peak-energy clock window or delete/reorder curriculum content without a stated feasibility reason"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "repair-overloaded-ai-plan",
+      "prompt": "ChatGPT gave me this plan for learning data science in 8 weeks and I'm already behind by week 2: Week 1: Python basics + pandas + numpy (20 hrs). Week 2: SQL + statistics fundamentals (20 hrs). Week 3: Data visualization + EDA (15 hrs). Week 4: Intro ML (regression, classification) (20 hrs). Week 5: Advanced ML (ensembles, XGBoost) (20 hrs). Week 6: Deep learning basics (15 hrs). Week 7: Build a portfolio project (20 hrs). Week 8: Interview prep + apply to jobs (15 hrs). I have a full time job and maybe 8-10 hours a week realistically. It has no rest days and I already missed most of week 1 because it was way too much. Can you fix this so it actually works?",
+      "expected_output": "Should recognize this as a repair task on an existing (AI-generated) plan rather than starting from a blank template. Should diagnose why it failed (roughly 145 hours of stated work squeezed into a stated 8-10h/week x 8 weeks = 64-80h budget, no rest/contingency, and the week 1 slip already confirms this). Should rebuild with realistic capacity-fit, protected contingency, committed/stretch/deferred scope (cutting or deferring content like deep learning and heavy ensembling), rest days, a bad-day minimum, and a review trigger, while preserving the sensible skill-dependency order (Python/pandas before ML, ML before deep learning) rather than just relabeling the same overloaded schedule.",
+      "files": [],
+      "assertions": [
+        "Diagnoses the actual cause of the plan's failure (stated hours vastly exceed stated 8-10h/week capacity) rather than just re-presenting a similar schedule",
+        "Extends the horizon and/or cuts scope (e.g. defers deep learning or advanced ensembling) rather than keeping all 8 weeks of original content packed into the same window",
+        "Introduces explicit rest days or protected contingency, since the original plan had none",
+        "Separates scope into committed vs stretch vs deferred rather than treating every original topic as equally mandatory",
+        "Preserves the underlying skill-dependency order (Python/pandas/SQL before ML, ML before deep learning) while repairing pacing",
+        "Includes a bad-day minimum and a review/replan trigger so the repaired plan doesn't fail the same way again"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "safety-critical-deadline-pressure",
+      "prompt": "I'm a solo dev and I promised my one client I'd ship a payment-processing update to their app by Friday (it's Tuesday). The update touches how we handle credit card tokenization and needs a database migration on the production users table. I've got maybe 3 hours tonight, 2 hours tomorrow, and I could pull a few hours Thursday night. I haven't written the migration rollback script or tested the tokenization change against their sandbox yet. Just give me a plan to hit Friday.",
+      "expected_output": "Should not simply compress security testing, migration rollback scripting, or sandbox verification out of the plan to protect the Friday date. Should apply the conflict-resolution order (safety/hard constraints and domain correctness before an arbitrary date), explicitly flag that untested tokenization changes and a migration with no rollback script on a production users table are safety/reversibility risks, and either preserve those steps within the available ~8-9 hours by cutting other optional scope, or state clearly that Friday is not safely achievable with those steps intact and offer the tradeoff (e.g. slip the date, or ship a smaller reversible change) rather than silently dropping the rollback script or testing.",
+      "files": [],
+      "assertions": [
+        "Does not cut or skip the migration rollback script or sandbox tokenization testing merely to preserve the Friday deadline",
+        "Explicitly flags the safety/reversibility risk of an untested tokenization change and a migration with no rollback plan on a production table",
+        "Applies conflict-resolution priority correctly: protects safety-critical and domain-correctness work ahead of the date, adjusting scope or the date instead",
+        "If Friday and full safety scope genuinely conflict, states that tradeoff explicitly rather than presenting a falsely confident schedule that fits everything in 8-9 hours",
+        "Uses the realistic stated hours (3 + 2 + a few Thursday hours) rather than assuming a full workday is available",
+        "Provides a concrete next atomic action appropriate to the time pressure (e.g. start the rollback script or sandbox test first, not the lowest-risk task first)"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "zero-constraints-fake-precision-trap",
+      "prompt": "Teach me Kubernetes and make me a plan.",
+      "expected_output": "With virtually no supplied constraints (no deadline, no weekly capacity, no current skill level, no environment), should not fabricate a specific number of hours/week, a fixed completion date, a cluster environment, or a peak-energy time. Should still produce a genuinely useful plan by using dependency-aware phasing of Kubernetes concepts, keeping personal-capacity-dependent fields (capacity, contingency, schedule) explicitly marked unknown or asking for them, and/or offering a conditional/branching structure that remains valid across different capacity assumptions rather than silently assuming a default like '5 hours/week for 6 weeks.'",
+      "files": [],
+      "assertions": [
+        "Does not invent a specific weekly time budget, deadline, or completion date that was never supplied by the user",
+        "Does not assume a specific environment (e.g. a specific cloud provider or local cluster tool) not stated by the user without flagging it as an assumption",
+        "Keeps personal-capacity-dependent planning values (capacity, contingency, schedule) explicitly labeled as unknown, or directly asks the user for them, rather than quietly filling them with a fabricated default",
+        "Still provides genuine planning value: dependency-aware sequencing of Kubernetes concepts (e.g. core objects/pods before networking/services before storage/stateful workloads before production concerns) rather than refusing to plan or giving only a content outline",
+        "Does not invent a specific peak-energy clock window"
+      ]
+    }
+  ]
+}
