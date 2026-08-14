@@ -14,3 +14,4 @@ Minh's personal skill collection, bundled into one plugin.
 | `writing-practice` | Coaches deliberate writing practice — the agent never writes the user's actual piece for them. |
 | `sound-human` | Makes prose read like a real person wrote it. Its main job is a default self-check the agent runs on its *own* generated prose (emails, posts, reports) before delivering it, not just an on-request edit of a pasted draft. |
 | `socratic-brainstorm` | Opt-in: probes a design or strategy idea with follow-up questions before giving direct feedback, instead of answering right away. Only triggers when explicitly invoked by name. |
+| `personal-planner-engine` | Turns a goal or domain plan into a realistic, execution-ready schedule — capacity-fit, contingency, committed/stretch/deferred scope, bad-day fallback. Hardens another skill's plan without overriding its domain logic, or builds one standalone. |
