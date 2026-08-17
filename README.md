@@ -1,5 +1,11 @@
 # minh-toolkit
 
+## ☕ Enjoying these skills? Fuel the next one.
+
+I build and maintain these skills solo, on my own time. If one of them saved you an afternoon of prompt-wrangling, consider buying me a coffee — it keeps this toolkit growing.
+
+<a href='https://ko-fi.com/U8D024998A' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 Minh's personal skill collection, bundled into one plugin.
 
 ## Skills
