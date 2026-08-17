@@ -62,6 +62,24 @@ run the skill against the input, compare against "Expected behavior." This is wh
 current case files, via Claude Code sessions doing structured critical-thinking passes over
 SKILL.md edits.
 
+**When a human asks to run the test suite (or a subset), delegate the actual run to a fresh
+subagent rather than running it inline in the main conversation**, then have it report its
+verdict back. Two reasons:
+- **Context hygiene.** Running a case means exploring, mentally simulating the skill step by
+  step — that exploration is disposable once a verdict is reached. Keeping it out of the main
+  agent's context avoids bloating a long-running session with reasoning nobody needs to see
+  again after the outcome lands.
+- **Fairness.** If the main agent just designed or edited the rule under test, checking it in
+  the same context risks grading its own homework — it's primed by the reasoning that produced
+  the rule, which biases toward finding it correct. A fresh subagent with no memory of *why* the
+  rule was written a certain way gives a more independent read on whether it actually holds.
+
+Use a plain subagent (not a fork — a fork inherits the conversation's design reasoning, which
+defeats the fairness goal), briefed with: the target skill's `SKILL.md`, the specific case
+file(s) to run, and instructions to report back a verdict (pass / bug-found / reverted) with
+reasoning. The main agent applies that verdict (updates `status` and `last_verified`, fixes any
+bug found) rather than re-deriving it itself.
+
 ## Where this could go (not built yet)
 
 The repo's existing CI (`.github/workflows/validate-plugin.yml`) only runs mechanical checks
