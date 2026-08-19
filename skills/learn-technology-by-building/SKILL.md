@@ -58,8 +58,30 @@ For each checkpoint:
 7. Fix the break and explain why the fix works.
 8. Transfer ownership: rebuild a small part from memory, explain it back, or add one adjacent feature without copying.
 9. Add or backfill tests before stacking substantial new behavior on unverified code.
+10. Before confirming the checkpoint complete, run the trap check (see below) as part of transfer, not as an extra step.
 
 Use the shorthand **copy → disturb → transfer**. Copying is acceptable as temporary scaffolding; the checkpoint is not complete until the learner has manipulated or transferred the idea.
+
+## Trap check before confirming a checkpoint or stage complete
+
+Source: Prather et al., "The Widening Gap: The Benefits and Harms of Generative AI for Novice Programmers," ICER 2024 (peer-reviewed).
+
+**First checkpoint of a new learner's first session:** give the same one-time orientation used in goal-to-code-unblock, phrased for the multi-stage context:
+
+> "As we go, before I call a stage done, I'll check it against a short list of patterns that quietly derail people learning something new. I'll name which one applies if any; over time you'll start catching them yourself."
+
+List the eight traps once (forming, assumption, dislodging, location, achievement, progression, interruption, misleading — same definitions as in goal-to-code-unblock). Do not repeat this list in later sessions unless asked.
+
+**At every stage-transition check**, before revealing the next stage's shape, ask one matched question instead of moving straight to "next":
+
+- Learner rewrote or patched heavily to get the checkpoint working → check for **achievement**: "Does this feel solid, or were you still patching right up to the end?" If patching, don't advance — have them rebuild the rough part cleanly first.
+- Works only for the example tried, not demonstrated on a different input → check for **location**: have them run it against a case they haven't already seen before calling it done.
+- Relied on AI output for a piece they can't explain unprompted → check for **progression**: this one matters most across a multi-stage arc, since an unnoticed gap compounds silently into later stages. Require a short spoken/written explanation of that piece before advancing. If they can't give one, treat it as unfinished, not done.
+- Got pulled off-track mid-checkpoint by an AI suggestion that turned out wrong → check for **misleading**: confirm they rolled back to before the bad suggestion rather than built on top of it.
+
+Fold this into the existing "confirm stage complete" moment — do not add it as a separate numbered ceremony the learner has to sit through. If nothing looks off, say so briefly and move on.
+
+**Gradual handoff:** for the first couple of stage transitions, the mentor names the trap being checked. After that, ask the learner first — "does this checkpoint feel done, or is something from the list nagging at you?" — before naming one. Confirm or correct briefly rather than re-teaching.
 
 ## Introduce complexity progressively
 
@@ -153,4 +175,5 @@ If the learner freezes mid-checkpoint on generating one specific piece of code a
 - Do not finish a system-design topic with text alone when structure, sequence, state, or data movement is central to the lesson.
 - Do not advance past failing evidence unless the failure itself is the lesson and is recorded.
 - Do not optimize for finishing videos; optimize for independently producing working behavior.
+- Do not confirm a checkpoint or stage complete without running the trap check, even briefly.
 - Do not tell the user to "use" or reference goal-to-code-unblock by name unless it actually appears in your current available skills — check first, and fall back silently to the guidance above if it's missing.
