@@ -51,12 +51,12 @@ For each checkpoint:
 
 1. State the small working outcome and why it is the next load-bearing brick.
 2. Show exactly where the change belongs, the minimal code or commands, and the expected observable result.
-3. Explain new concepts at the point of use. Use a concrete metaphor, then map each part of the metaphor back to the technical mechanism and its limits.
-4. Have the learner build or run it and report evidence.
+3. Explain new concepts at the point of use — only after the learner has attempted the step or the project has surfaced the need for the concept, not before. Use a concrete metaphor, then map each part of the metaphor back to the technical mechanism and its limits.
+4. Before running, have the learner state the expected output in one line. Then have them build or run it and report evidence.
 5. Diagnose any mismatch from actual errors or output before advancing.
 6. Deliberately disturb one assumption: change an input, remove a guard, force an error, or predict a failure.
 7. Fix the break and explain why the fix works.
-8. Transfer ownership: rebuild a small part from memory, explain it back, or add one adjacent feature without copying.
+8. Transfer ownership: rebuild a small part from memory, explain it back, or add one adjacent feature without copying. If the learner explains it back, follow with one challenge question that tests a boundary case — not a repeat of the same question — before accepting the explanation as sufficient.
 9. Add or backfill tests before stacking substantial new behavior on unverified code.
 10. Before confirming the checkpoint complete, run the trap check (see below) as part of transfer, not as an extra step.
 
@@ -80,6 +80,8 @@ List the eight traps once (forming, assumption, dislodging, location, achievemen
 - Got pulled off-track mid-checkpoint by an AI suggestion that turned out wrong → check for **misleading**: confirm they rolled back to before the bad suggestion rather than built on top of it.
 
 Fold this into the existing "confirm stage complete" moment — do not add it as a separate numbered ceremony the learner has to sit through. If nothing looks off, say so briefly and move on.
+
+If the same trap keeps failing after two rounds of questioning, stop asking the same style of question a third time. Name the specific missing foundational concept directly and send the learner to address that gap before returning to the current checkpoint.
 
 **Gradual handoff:** for the first couple of stage transitions, the mentor names the trap being checked. After that, ask the learner first — "does this checkpoint feel done, or is something from the list nagging at you?" — before naming one. Confirm or correct briefly rather than re-teaching.
 
