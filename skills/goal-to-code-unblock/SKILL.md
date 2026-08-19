@@ -46,6 +46,47 @@ For each line, the user asks themselves: "Do I already know the syntax for this?
 
 The agent does not solve multiple lines at once on the user's behalf, even if asked to "just show the whole thing" — redirect back to one line.
 
+### 3.5. Probe: name the trap before looking anything up
+
+Source: Prather et al., "The Widening Gap: The Benefits and Harms of Generative AI for Novice Programmers," ICER 2024 (peer-reviewed).
+
+**First time this skill is used in a session, or the first time the user says "I'm stuck":** give a short one-time orientation. Don't explain the research or the theory — just hand them the vocabulary:
+
+> "Before we dig in — there are a handful of named patterns that trip up almost everyone learning to code. When you get stuck, I'll name which one it looks like instead of just telling you what to do. Over time you'll start naming them yourself before I do."
+
+Then list the eight traps once, one line each, no elaboration:
+
+- **forming** — right question, wrong approach
+- **assumption** — confidently solving a different problem than the one asked
+- **dislodging** — stuck in an approach that isn't working, can't let go of it
+- **location** — skipped a key step early on (a loop, a structure), didn't notice
+- **achievement** — patching small fixes onto code that actually needs a rewrite
+- **progression** — quietly falling behind the real material because AI output outran your understanding
+- **interruption** — an AI suggestion breaks your train of thought mid-reasoning
+- **misleading** — trusted a wrong suggestion (AI's or your own) and it took you off course
+
+Do not re-explain this list unless the user asks. It's a one-time orientation, not a lecture repeated every session.
+
+**Every time after that, when the user says "I'm stuck":** do not jump straight to step 4 (lookup) and do not just ask "what do you need?". Ask a single diagnostic question that names a candidate trap, matched to where they are in the loop:
+
+**Stuck before writing the line (no code yet for this line):**
+- Understands the goal but not sure how to approach it? → likely **forming** — send them back to restate the goal in different words, not to step 4.
+- Not sure if they're solving the actual stated problem? → likely **assumption** — have them re-read the original requirement, not their own code.
+
+**Stuck after code exists but isn't working:**
+- Repeatedly editing without changing the underlying structure? → likely **dislodging** — ask: "If you rewrote this from scratch with a different approach, what would that look like?"
+- Works for one case but doesn't generalize? → likely **location** — send them back to the step-2 skeleton to check for a missing line.
+- Making small patches with no real progress? → likely **achievement** — ask directly: "If you deleted this and started over, where would you start differently?"
+
+**Stuck because of prior AI/lookup use:**
+- Confident but can't explain *why* their own line is correct? → likely **progression** — stop, require a spoken/written explanation before continuing, no further lookups until they can explain it.
+- Got distracted by an autocomplete suggestion mid-thought? → likely **interruption** — suggest turning off inline suggestions and taking two minutes of silent thinking before re-engaging.
+- Followed a suggestion that's now leading somewhere wrong? → likely **misleading** — roll back to before that suggestion, don't keep patching on top of the wrong path.
+
+**The agent's job at this checkpoint:** name the trap as a *question*, not a diagnosis handed down ("this looks like X, does that match?"), and let the user decide how to get out of it. Naming the trap is review; choosing the way out is authoring, and authoring stays with the user.
+
+**Gradual handoff, within a session:** the first one or two times the user gets stuck, the agent names the candidate trap. After that, before naming it, ask the user to guess first: "Which of the eight does this feel like to you?" If they guess right (or close), confirm briefly and move on — don't re-explain the trap. If they guess wrong or can't guess, name it as usual and continue. The goal is that naming the trap becomes something the user does with the agent's confirmation, not something the agent always supplies — that is the actual transfer of the skill, not just avoiding the stuck moment this one time.
+
 ### 4. Resolve specific unknowns with a narrow lookup
 The user looks up the smallest possible thing (a single function signature, a single syntax pattern) — not a tutorial, not a full doc page.
 
@@ -85,6 +126,7 @@ If the user asks for a full multi-week learning roadmap and the learn-technology
 |---|---|---|
 | One-sentence goal | Is it actually one task? | Write the skeleton for them |
 | Comment skeleton | Is each line one action/decision? | Rewrite lines to be "better" |
+| "I'm stuck" | Which of the eight traps does this match? | Diagnose without asking, or solve the line for them |
 | "I don't know how to do line N" | Is this a genuinely narrow unknown? | Hand them the finished line unprompted |
 | Finished code | Did they run it / try to break it? | Point out bugs before they've tried |
 | Post-break results + guardrail answers | What did they miss? | — this is the one place to be thorough |
@@ -94,8 +136,9 @@ If the user asks for a full multi-week learning roadmap and the learn-technology
 1. Have I named the one-sentence goal?
 2. Have I written the comment skeleton?
 3. Is my blank-page feeling about the *whole thing* or *one line*? (Whole thing → skeleton's too big, split it. One line → narrow lookup.)
-4. Did I try to break it before trusting it?
-5. Did I run the guardrail questions?
+4. Which of the eight traps does this feel like? (forming, assumption, dislodging, location, achievement, progression, interruption, misleading)
+5. Did I try to break it before trusting it?
+6. Did I run the guardrail questions?
 
 ## Guardrail
 
@@ -103,4 +146,4 @@ Do not tell the user to "use" or reference learn-technology-by-building by name 
 
 ## One-line summary
 
-**Vague goal → plain-English skeleton → one line at a time → narrow lookup only for real unknowns → break it → guardrail refactor.** The agent reviews at each arrow; the user does every step in between.
+**Vague goal → plain-English skeleton → one line at a time (name the trap when stuck) → narrow lookup only for real unknowns → break it → guardrail refactor.** The agent reviews at each arrow; the user does every step in between, and increasingly does the trap-naming too.
