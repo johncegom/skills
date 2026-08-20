@@ -1,2 +1,7 @@
 /dist/
 *.plugin
+
+# Live, user-generated state files created by skills at runtime — never
+# committed, since they can contain personal viewing/learning history.
+skills/youtube-video-critic/references/youtube-critic-ledger.md
+skills/learn-technology-by-building/references/learning-profile.md
