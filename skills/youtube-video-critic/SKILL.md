@@ -103,6 +103,18 @@ After the verdict, always add two more sections — this is what turns an evalua
 
 Only produce these two sections when the user's request is an evaluation of a specific video (not when they ask a narrower follow-up question about something already discussed) — but by default, always include them as part of a full evaluation output, not just on request.
 
+## Step 5: Maintain the ledger (optional)
+
+This step is secondary to the evaluation itself — if something has to give under time or token pressure, drop this step, never Steps 1-4.
+
+The ledger uses the same storage pattern as `learn-technology-by-building`'s learner profile: a plain file at `references/youtube-critic-ledger.md`, inside this skill's own directory, built from [references/ledger-template.md](references/ledger-template.md). That template covers exactly when to create the ledger, when to update it in place, and how to fall back to conversation memory when no filesystem is available — read it before touching the ledger.
+
+**When to touch the ledger at all (opt-in, checked once per conversation):**
+
+1. On the first evaluation in a conversation, do not create or ask about a ledger unprompted. Only act on it if either `references/youtube-critic-ledger.md` already exists, or the user has explicitly asked, at some point, to track, list, or rank videos across sessions.
+2. If neither is true, skip this step entirely and don't mention it.
+3. Once a ledger exists (just created, tracked in memory per the template's fallback, or found), maintain it automatically on every subsequent evaluation in this and future sessions, without asking again.
+
 ## Language and tone
 
 - Respond in the same language the user used to ask (if they wrote in Vietnamese, answer in Vietnamese) — this includes the structural labels in Step 3/4 (table headers, row labels, the three verdict names, "Value score", "Core takeaways", "Personal application"), not just the surrounding prose. This file's instructions are written in English for consistency across skills in this plugin, but that's a source-language choice, not a runtime constraint — nothing here stays fixed in English when the user is asking in another language.
