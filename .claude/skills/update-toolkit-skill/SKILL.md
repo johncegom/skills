@@ -41,7 +41,11 @@ description: >
 Every skill in this repo already uses this style — match it.
 
 ### 3. Bump the version once, on the first meaningful change in this PR
-If this is the first commit in the PR that changes anything beyond a typo, bump `.claude-plugin/plugin.json`'s `"version"` (semver) and keep `.claude-plugin/marketplace.json`'s matching `plugins[].version` field in sync with it. This is what lets `Sync automatically` in Desktop and `claude plugin update` detect there's something new.
+If this is the first commit in the PR that changes anything beyond a typo, bump `.claude-plugin/plugin.json`'s `"version"` (semver) and keep `.claude-plugin/marketplace.json`'s matching `plugins[].version` field **and `README.md`'s version badge** in sync with it — all three carry the same number. The badge is a plain shields.io URL (`.../version-X.Y.Z-blue`), not JSON, so it's easy to forget when scripting the other two; grep for it explicitly:
+```
+grep -n "img.shields.io/badge/version" README.md
+```
+This is what lets `Sync automatically` in Desktop and `claude plugin update` detect there's something new, and keeps the README from silently drifting behind the shipped version (it drifted once, fixed alongside this instruction).
 
 **If you're adding a further commit to a PR that already bumped the version this session (still open, not yet merged): do NOT bump again.** Keep the same version number across every iteration within that one open PR — update the PR description/commit message to explain what changed in this round, not the version field. A version number identifies one shipped state; bumping it again before the previous bump has even merged just churns the number without a matching release ever existing at the intermediate value. (This is exactly what went wrong in PR #17: the version got bumped, reverted to match `main`, then re-bumped, purely from iterating inside one still-open PR — the fix was landing on one bump per PR, decided at the first meaningful change and held steady after that.)
 
