@@ -1,12 +1,30 @@
 # YouTube video ledger template
 
-This is a blank skeleton, not a finished ledger. Before an evaluation that touches the ledger (see Step 5 in SKILL.md for when that applies), check whether `references/youtube-critic-ledger.md` already exists in this skill's directory.
+This is a blank skeleton, not a finished ledger. Which of the three cases below applies depends on the environment — pick one before touching the ledger (see Step 5 in SKILL.md for when that applies at all).
+
+## Case A — Claude Code (real local filesystem)
+
+Check whether `references/youtube-critic-ledger.md` already exists in this skill's directory.
 
 - **If it doesn't exist:** copy the header below, save it as `references/youtube-critic-ledger.md`, then append the first row for this evaluation. That file — not this template — is the running ledger.
 - **If it already exists:** read it, then append one row per evaluation instead of recreating it from scratch.
-- **If there's no filesystem available** (e.g. plain chat mode with no file tools): keep the same rows in conversation memory instead, using this structure as the row format, and tell the user the ledger won't persist past this conversation.
 
 This file is git-ignored, so it won't be committed to the plugin's source repo by normal git operations (`git add -A`, etc.) — but that also means it isn't backed up anywhere. If this plugin is ever reinstalled from a fresh download rather than updated in place, the ledger may not survive. If the user wants to keep it across a fresh reinstall, tell them to back it up themselves.
+
+## Case B — Claude Desktop/Projects, claude.ai chat, or anywhere a filesystem write can't be confirmed as visible to the human
+
+**Do not write to a container path and assume it reaches Project Knowledge.** A file write can succeed in the agent's own execution environment while staying completely invisible to the human — this exact failure happened in real use: the agent reported the ledger as updated, and the user never saw the change, because the write landed in a container, not in Project Knowledge. File-write tools appearing to be present is not evidence the write is visible; don't infer visibility from tool availability.
+
+Project Knowledge stays the canonical, durable ledger. Everything the agent produces here is a *working copy* for the current conversation, not a replacement for it — the agent can read/search Project Knowledge even though it can't write to it.
+
+1. On the first ledger touch in the conversation, check whether a ledger already exists in Project Knowledge (search/read it). Seed the working copy from that existing content if found; start from the blank header below if not.
+2. If Artifact creation/update capability is available: create an Artifact containing the full ledger (seeded per step 1) plus the new row. On every later touch in the same conversation, update that same Artifact in place rather than creating a new one.
+3. If no Artifact capability is available: output the full updated ledger content (seeded per step 1, plus the new row) as a markdown code block for the user to copy and save themselves.
+4. On the first ledger touch only — not repeated per evaluation — say once that this is a working copy for the conversation, and that the user should save/re-upload the updated content back into Project Knowledge (replacing the old version) so the next conversation reads the latest history.
+
+## Case C — No filesystem and no Artifact capability at all
+
+Keep the same rows in conversation memory instead, using this structure as the row format, and tell the user the ledger won't persist past this conversation.
 
 ---
 
