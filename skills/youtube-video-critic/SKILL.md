@@ -107,13 +107,13 @@ Only produce these two sections when the user's request is an evaluation of a sp
 
 This step is secondary to the evaluation itself — if something has to give under time or token pressure, drop this step, never Steps 1-4.
 
-The ledger uses the same storage pattern as `learn-technology-by-building`'s learner profile: a plain file at `references/youtube-critic-ledger.md`, inside this skill's own directory, built from [references/ledger-template.md](references/ledger-template.md). That template covers exactly when to create the ledger, when to update it in place, and how to fall back to conversation memory when no filesystem is available — read it before touching the ledger.
+Where the ledger actually lives depends on the environment — see [references/ledger-template.md](references/ledger-template.md) for the three cases (Claude Code: a real local file; Desktop/Projects/chat: an Artifact or exported text, with Project Knowledge staying canonical; neither available: conversation memory only). Read it before touching the ledger. Critically: never assume a file write is visible to the human just because a file-write tool is present — that assumption caused a real bug where the agent reported the ledger as updated while the human saw nothing change, because the write landed in a container instead of Project Knowledge. Follow the template's case for the current environment exactly rather than defaulting to "write a file."
 
 **When to touch the ledger at all (opt-in, checked once per conversation):**
 
-1. On the first evaluation in a conversation, do not create or ask about a ledger unprompted. Only act on it if either `references/youtube-critic-ledger.md` already exists, or the user has explicitly asked, at some point, to track, list, or rank videos across sessions.
+1. On the first evaluation in a conversation, do not create or ask about a ledger unprompted. Only act on it if either an existing ledger is found (per the template's Case A/B check), or the user has explicitly asked, at some point, to track, list, or rank videos across sessions.
 2. If neither is true, skip this step entirely and don't mention it.
-3. Once a ledger exists (just created, tracked in memory per the template's fallback, or found), maintain it automatically on every subsequent evaluation in this and future sessions, without asking again.
+3. Once a ledger exists (just created, tracked in memory per Case C, or found), maintain it automatically on every subsequent evaluation in this and future sessions, without asking again — except the one-time Case B statement about saving the working copy back to Project Knowledge, which happens once on first touch, not per evaluation.
 
 ## Language and tone
 
